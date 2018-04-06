@@ -41,6 +41,8 @@ AAAA/MM/moto/840015-6.json
 ]
 ```
 
+---
+
 ## FIPE API
 
   **ATENÇÃO**
@@ -50,100 +52,194 @@ AAAA/MM/moto/840015-6.json
   
 
 ### Tabela de Referência
+  Aqui retorna o código de referência mensal para fazer as outras chamadas.
 
-  POST:
-  ```
-  http://veiculos.fipe.org.br/api/veiculos/ConsultarTabelaDeReferencia
-  ```
+  - POST
+    ```
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarTabelaDeReferencia
+    ```
 
-  Headers
-  ```
-  Host: veiculos.fipe.org.br
-  Referer: http://veiculos.fipe.org.br
-  Content-Type: application/json
-  ```
+  - Headers
+    ```
+    Host: veiculos.fipe.org.br
+    Referer: http://veiculos.fipe.org.br
+    Content-Type: application/json
+    ```
 
-  Result
-  ```json
-  [
-    {
-      "Codigo": 228,
-      "Mes": "abril/2018 "
-    }
-  ]
-  ```
+  - Result
+    ```json
+    [
+      {
+        "Codigo": 228,
+        "Mes": "abril/2018 "
+      }
+    ]
+    ```
 
 ### Consultar Marcas
-
-  POST:
+  Passar via ```header``` o tipo de veículo, exitem três tipos e também o código de referência mensal.
   ```
-  http://veiculos.fipe.org.br/api/veiculos/ConsultarMarcas
-  ```
-
-  Headers
-  ```
-  Host: veiculos.fipe.org.br
-  Referer: http://veiculos.fipe.org.br
-  Content-Type: application/json
+    1 = carros
+    2 = motos
+    3 = caminhões
   ```
 
-  Body
-  ```json
-  {
-    "codigoTabelaReferencia": 228,
-    "codigoTipoVeiculo": 3
-  }
-  ```
+  - POST
+    ```
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarMarcas
+    ```
 
-  Result
-  ```json
-  [
+  - Headers
+    ```
+    Host: veiculos.fipe.org.br
+    Referer: http://veiculos.fipe.org.br
+    Content-Type: application/json
+    ```
+
+  - Body
+    ```json
     {
-      "Label": "AGRALE",
-      "Value": "102"
+      "codigoTabelaReferencia": 228,
+      "codigoTipoVeiculo": 3
     }
-  ]
-  ```
+    ```
+
+  - Result
+    ```json
+    [
+      {
+        "Label": "AGRALE",
+        "Value": "102"
+      }
+    ]
+    ```
 
 
 ### Consultar Modelos
+  Passar via ```header``` o tipo de veículo, código de referência mensal e código da marca.
 
-  POST:
-  ```
-  http://veiculos.fipe.org.br/api/veiculos/ConsultarModelos
-  ```
+  - POST
+    ```
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarModelos
+    ```
 
-  Headers
-  ```
-  Host: veiculos.fipe.org.br
-  Referer: http://veiculos.fipe.org.br
-  Content-Type: application/json
-  ```
+  - Headers
+    ```
+    Host: veiculos.fipe.org.br
+    Referer: http://veiculos.fipe.org.br
+    Content-Type: application/json
+    ```
 
-  Body
-  ```json
-  {
-    "codigoTipoVeiculo": 3,
-    "codigoTabelaReferencia": 228,
-    "codigoModelo": "",
-    "codigoMarca": 102,
-    "ano": "",
-    "codigoTipoCombustivel": "",
-    "anoModelo": "",
-    "modeloCodigoExterno": ""
-  }
-  ```
+  - Body
+    ```json
+    {
+      "codigoTipoVeiculo": 3,
+      "codigoTabelaReferencia": 228,
+      "codigoModelo": "",
+      "codigoMarca": 102,
+      "ano": "",
+      "codigoTipoCombustivel": "",
+      "anoModelo": "",
+      "modeloCodigoExterno": ""
+    }
+    ```
 
-  Result
-  ```json
-  {
-    "Modelos": [
+  - Result
+    ```json
+    {
+      "Modelos": [
+        {
+          "Label": "10000 / 10000 S  2p (diesel) (E5)",
+          "Value": 5986
+        }
+      ]
+    }
+    ```
+
+### Consultar Ano Modelo
+  Passar via ```header``` o tipo de veículo, código de referência mensal, código da marca e código do modelo.
+
+  - POST
+    ```
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarAnoModelo
+    ```
+
+  - Headers
+    ```
+    Host: veiculos.fipe.org.br
+    Referer: http://veiculos.fipe.org.br
+    Content-Type: application/json
+    ```
+
+  - Body
+    ```json
+    {
+      "codigoTipoVeiculo": 3,
+      "codigoTabelaReferencia": 228,
+      "codigoModelo": 5986,
+      "codigoMarca": 102,
+      "ano": "",
+      "codigoTipoCombustivel": "",
+      "anoModelo": "",
+      "modeloCodigoExterno": ""
+    }
+    ```
+
+  - Result
+    ```json
+    [
       {
-        "Label": "10000 / 10000 S  2p (diesel) (E5)",
-        "Value": 5986
+        "Label": "32000",
+        "Value": "32000-3"
       }
     ]
-  }
+    ```
+
+
+### Consultar Modelos Através do Ano
+  Passar via ```header``` o tipo de veículo, código de referência mensal, código da marca, código do modelo, ano (string), código do tipo de combustível e código do ano/modelo.
+  
+  No ```codigoTipoCombustivel``` e ```anoModelo``` tem que fazer um parse do ```ano (32000-3)``` para obter esses 2 valores, onde:
   ```
+  codigoTipoCombustivel = 3
+  anoModelo = 32000
+  ```
+
+
+  - POST:
+    ```
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarAnoModelo
+    ```
+
+  - Headers
+    ```
+    Host: veiculos.fipe.org.br
+    Referer: http://veiculos.fipe.org.br
+    Content-Type: application/json
+    ```
+
+  - Body
+    ```json
+    {
+      "codigoTipoVeiculo": 3,
+      "codigoTabelaReferencia": 228,
+      "codigoModelo": 5986,
+      "codigoMarca": 102,
+      "ano": "32000-3",
+      "codigoTipoCombustivel": 3,
+      "anoModelo": 32000,
+      "modeloCodigoExterno": ""
+    }
+    ```
+
+  - Result
+    ```json
+    [
+      {
+        "Label": "10000 / 10000 S  2p (diesel) (E5)",
+        "Value": "5986"
+      }
+    ]
+    ```
 
 Enjoy :)
