@@ -41,5 +41,103 @@ AAAA/MM/moto/840015-6.json
 ]
 ```
 
+## FIPE API
+
+### Tabela de Referência
+
+  POST:
+  ```
+  http://veiculos.fipe.org.br/api/veiculos/ConsultarTabelaDeReferencia
+  ```
+
+  Headers
+  ```
+  Host: veiculos.fipe.org.br
+  Referer: http://veiculos.fipe.org.br
+  Content-Type: application/json
+  ```
+
+  Result
+  ```json
+  [
+    {
+      "Codigo": 228,
+      "Mes": "abril/2018 "
+    }
+  ]
+  ```
+
+### Consultar Marcas
+
+  POST:
+  ```
+  http://veiculos.fipe.org.br/api/veiculos/ConsultarMarcas
+  ```
+
+  Headers
+  ```
+  Host: veiculos.fipe.org.br
+  Referer: http://veiculos.fipe.org.br
+  Content-Type: application/json
+  ```
+
+  Body
+  ```json
+  {
+    "codigoTabelaReferencia": 228,
+    "codigoTipoVeiculo": 3
+  }
+  ```
+
+  Result
+  ```json
+  [
+    {
+      "Label": "AGRALE",
+      "Value": "102"
+    }
+  ]
+  ```
+
+
+### Consultar Modelos
+
+  POST:
+  ```
+  http://veiculos.fipe.org.br/api/veiculos/ConsultarModelos
+  ```
+
+  Headers
+  ```
+  Host: veiculos.fipe.org.br
+  Referer: http://veiculos.fipe.org.br
+  Content-Type: application/json
+  ```
+
+  Body
+  ```json
+  {
+    "codigoTipoVeiculo": 3,
+    "codigoTabelaReferencia": 228,
+    "codigoModelo": "",
+    "codigoMarca": 102,
+    "ano": "",
+    "codigoTipoCombustivel": "",
+    "anoModelo": "",
+    "modeloCodigoExterno": ""
+  }
+  ```
+
+  Result
+  ```json
+  {
+    "Modelos": [
+      {
+        "Label": "10000 / 10000 S  2p (diesel) (E5)",
+        "Value": 5986
+      }
+    ]
+  }
+  ```
 
 Enjoy :)
