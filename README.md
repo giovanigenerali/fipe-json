@@ -43,6 +43,12 @@ AAAA/MM/moto/840015-6.json
 
 ## FIPE API
 
+  **ATENÇÃO**
+  - Essa API não é declaradamente pública, portanto consuma com moderação pois podem ocorrer restrições e bloqueios.
+  - Essas informações foram obtidas diretamente do site oficial da FIPE apenas fazendo leitura do código e analisando as chamadas que lá exitem!
+  - Esse repositório não tem nenhum vínculo com a FIPE e tem o intuito de ser apenas informativo, dúvidas acesse http://veiculos.fipe.org.br/
+  
+
 ### Tabela de Referência
 
   POST:
