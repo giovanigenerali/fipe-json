@@ -53,7 +53,7 @@ AAAA/MM/moto/840015-6.json
 ## FIPE API
 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/850a98a74ef2f76f18ec#?env%5Bwgenial-opensource%5D=W10=)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/850a98a74ef2f76f18ec)
 
   **ATENÇÃO**
   - Essa API não é declaradamente pública, portanto consuma com moderação pois podem ocorrer restrições e bloqueios.
