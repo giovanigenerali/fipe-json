@@ -52,6 +52,9 @@ AAAA/MM/moto/840015-6.json
 
 ## FIPE API
 
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/850a98a74ef2f76f18ec)
+
   **ATENÇÃO**
   - Essa API não é declaradamente pública, portanto consuma com moderação pois podem ocorrer restrições e bloqueios.
   - Essas informações foram obtidas diretamente do site oficial da FIPE apenas fazendo leitura do código e analisando as chamadas que lá exitem!
