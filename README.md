@@ -1,3 +1,5 @@
+### Quando serão lançadas as novas versões do json? Pode compartilhar o script que gera os JSON? Perdão mas não tem issues no seu repo =)
+
 # Documentação
 - [FIPE JSON](#fipe-json)
 - [FIPE API](#fipe-api)
