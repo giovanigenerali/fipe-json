@@ -59,7 +59,7 @@ AAAA/MM/moto/840015-6.json
   - Essa API não é declaradamente pública, portanto consuma com moderação pois podem ocorrer restrições e bloqueios.
   - Essas informações foram obtidas diretamente do site oficial da FIPE apenas fazendo leitura do código e analisando as chamadas que lá exitem!
   - Esse repositório não tem nenhum vínculo com a FIPE e tem o intuito de ser apenas informativo, dúvidas acesse http://veiculos.fipe.org.br/
-  
+
 
 ### Tabela de Referência
   Aqui retorna o código de referência mensal para fazer as outras chamadas.
@@ -80,9 +80,10 @@ AAAA/MM/moto/840015-6.json
     ```json
     [
       {
-        "Codigo": 228,
-        "Mes": "abril/2018 "
+        "Codigo": 231,
+        "Mes": "julho/2018 "
       }
+      ...
     ]
     ```
 
@@ -109,8 +110,8 @@ AAAA/MM/moto/840015-6.json
   - Body
     ```json
     {
-      "codigoTabelaReferencia": 228,
-      "codigoTipoVeiculo": 3
+      "codigoTabelaReferencia": 231,
+      "codigoTipoVeiculo": 1
     }
     ```
 
@@ -118,9 +119,10 @@ AAAA/MM/moto/840015-6.json
     ```json
     [
       {
-        "Label": "AGRALE",
-        "Value": "102"
+        "Label": "Hyundai",
+        "Value": "26"
       }
+      ... 
     ]
     ```
 
@@ -143,14 +145,9 @@ AAAA/MM/moto/840015-6.json
   - Body
     ```json
     {
-      "codigoTipoVeiculo": 3,
-      "codigoTabelaReferencia": 228,
-      "codigoModelo": "",
-      "codigoMarca": 102,
-      "ano": "",
-      "codigoTipoCombustivel": "",
-      "anoModelo": "",
-      "modeloCodigoExterno": ""
+      "codigoTabelaReferencia": 231,
+      "codigoTipoVeiculo": 1,
+      "codigoMarca": 26
     }
     ```
 
@@ -159,9 +156,10 @@ AAAA/MM/moto/840015-6.json
     {
       "Modelos": [
         {
-          "Label": "10000 / 10000 S  2p (diesel) (E5)",
-          "Value": 5986
+          "Label": "AZERA GLS 3.3 V6 24V 4p Aut.",
+          "Value": 4403
         }
+        ...
       ]
     }
     ```
@@ -184,14 +182,10 @@ AAAA/MM/moto/840015-6.json
   - Body
     ```json
     {
-      "codigoTipoVeiculo": 3,
-      "codigoTabelaReferencia": 228,
-      "codigoModelo": 5986,
-      "codigoMarca": 102,
-      "ano": "",
-      "codigoTipoCombustivel": "",
-      "anoModelo": "",
-      "modeloCodigoExterno": ""
+      "codigoTabelaReferencia": 231,
+      "codigoTipoVeiculo": 1,
+      "codigoMarca": 26,
+      "codigoModelo": 4403
     }
     ```
 
@@ -199,20 +193,21 @@ AAAA/MM/moto/840015-6.json
     ```json
     [
       {
-        "Label": "32000",
-        "Value": "32000-3"
+        "Label": "2011 Gasolina",
+        "Value": "2011-1"
       }
+      ...
     ]
     ```
 
 
 ### Consultar Modelos Através do Ano
   Passar via ```header``` o tipo de veículo, código de referência mensal, código da marca, código do modelo, ano (string), código do tipo de combustível e código do ano/modelo.
-  
-  No ```codigoTipoCombustivel``` e ```anoModelo``` tem que fazer um parse do ```ano (32000-3)``` para obter esses 2 valores, onde:
+
+  No ```codigoTipoCombustivel``` e ```anoModelo``` tem que fazer um parse do ```ano (2011-1)``` para obter esses 2 valores, onde:
   ```
-  codigoTipoCombustivel = 3
-  anoModelo = 32000
+  codigoTipoCombustivel = 1
+  anoModelo = 2011
   ```
 
 
@@ -231,14 +226,12 @@ AAAA/MM/moto/840015-6.json
   - Body
     ```json
     {
-      "codigoTipoVeiculo": 3,
-      "codigoTabelaReferencia": 228,
-      "codigoModelo": 5986,
-      "codigoMarca": 102,
-      "ano": "32000-3",
-      "codigoTipoCombustivel": 3,
-      "anoModelo": 32000,
-      "modeloCodigoExterno": ""
+      "codigoTabelaReferencia": 231,
+      "codigoTipoVeiculo": 1,
+      "codigoMarca": 26,
+      "ano": "2011-1",
+      "codigoTipoCombustivel": 1,
+      "anoModelo": 2011
     }
     ```
 
@@ -246,10 +239,63 @@ AAAA/MM/moto/840015-6.json
     ```json
     [
       {
-        "Label": "10000 / 10000 S  2p (diesel) (E5)",
-        "Value": "5986"
+        "Label": "AZERA GLS 3.3 V6 24V 4p Aut.",
+        "Value": "4403"
       }
     ]
+    ```
+
+### Consultar Valor do Veículo
+  Passar via ```header``` o tipo de veículo, código de referência mensal, código da marca, código do modelo, ano (string), código do tipo de combustível, código do ano/modelo e tipoConsulta (tradicional).
+
+  No ```codigoTipoCombustivel``` e ```anoModelo``` tem que fazer um parse do ```ano (2011-1)``` para obter esses 2 valores, onde:
+  ```
+  codigoTipoCombustivel = 1
+  anoModelo = 2011
+  ```
+
+
+  - POST:
+    ```
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarValorComTodosParametros
+    ```
+
+  - Headers
+    ```
+    Host: veiculos.fipe.org.br
+    Referer: http://veiculos.fipe.org.br
+    Content-Type: application/json
+    ```
+
+  - Body
+    ```json
+    {
+      "codigoTabelaReferencia": 231,
+      "codigoTipoVeiculo": 1,
+      "codigoMarca": 26,
+      "ano": "2011-1",
+      "codigoTipoCombustivel": 1,
+      "anoModelo": 2011
+      "codigoModelo": 4403,
+      "tipoConsulta": "tradicional"
+    }
+    ```
+
+  - Result
+    ```json
+    {
+      "Valor": "R$ 39.225,00",
+      "Marca": "Hyundai",
+      "Modelo": "AZERA GLS 3.3 V6 24V 4p Aut.",
+      "AnoModelo": 2011,
+      "Combustivel": "Gasolina",
+      "CodigoFipe": "015069-0",
+      "MesReferencia": "julho de 2018 ",
+      "Autenticacao": "s47hx3btzqfx",
+      "TipoVeiculo": 1,
+      "SiglaCombustivel": "G",
+      "DataConsulta": "sábado, 28 de julho de 2018 16:34"
+    }
     ```
 
 Enjoy :)
