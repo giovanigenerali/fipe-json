@@ -233,7 +233,7 @@
     ```
 
   - Result
-    ```js
+    ```json
     {
       "Valor": "R$ 39.225,00",
       "Marca": "Hyundai",
