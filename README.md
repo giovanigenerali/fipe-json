@@ -76,7 +76,6 @@
         "Label": "Hyundai",
         "Value": "26"
       }
-      ... 
     ]
     ```
 
@@ -113,7 +112,6 @@
           "Label": "AZERA GLS 3.3 V6 24V 4p Aut.",
           "Value": 4403
         }
-        ...
       ]
     }
     ```
@@ -150,7 +148,6 @@
         "Label": "2011 Gasolina",
         "Value": "2011-1"
       }
-      ...
     ]
     ```
 
@@ -229,7 +226,7 @@
       "codigoMarca": 26,
       "ano": "2011-1",
       "codigoTipoCombustivel": 1,
-      "anoModelo": 2011
+      "anoModelo": 2011,
       "codigoModelo": 4403,
       "tipoConsulta": "tradicional"
     }
