@@ -69,4 +69,3 @@
 		"tipoConsulta" => "tradicional"
 	));
 	// echo json_decode($valor_veiculo);
-?>
