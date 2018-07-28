@@ -252,7 +252,7 @@
 
 ## FIPE JSON
 
-Listagem com todos os veículos: carro, moto e caminhão.
+Listagem com todos os veículos: carro, moto e caminhão. O script que realiza essa consulta está disponível aqui [crawler-g1.php](https://github.com/wgenial/fipe-json/blob/master/src/crawler-g1.php).
 
 - Estrutura das pastas: AAAA/MM (ANO/MÊS)
 
