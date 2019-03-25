@@ -164,7 +164,7 @@ O script que realiza essa consulta está disponível aqui [fipejson.php](https:/
 
   - POST:
     ```
-    http://veiculos.fipe.org.br/api/veiculos/ConsultarAnoModelo
+    http://veiculos.fipe.org.br/api/veiculos/ConsultarModelosAtravesDoAno
     ```
 
   - Headers
