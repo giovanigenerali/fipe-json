@@ -238,6 +238,18 @@ O script que realiza essa consulta está disponível aqui [fipejson.php](https:/
       "tipoConsulta": "tradicional"
     }
     ```
+    Também pode ser consultado diretamente pelo código FIPE ```modeloCodigoExterno```, ano do modelo ```anoModelo``` , e tabela de referência ```codigoTabelaReferencia```.
+    Observe que o ```tipoConsulta``` agora é ```codigo```, o parametro ```codigoTipoVeiculo``` pode ser ```1``` - carros, ```2``` - motos, ```3``` - caminhões.
+    - Body
+    ```json
+    {
+      "codigoTabelaReferencia": 263,
+      "codigoTipoVeiculo": 1,
+      "anoModelo": 2011,
+      "modeloCodigoExterno": "004357-5",
+      "tipoConsulta": "codigo"
+    }
+    ```
 
   - Result
     ```json
