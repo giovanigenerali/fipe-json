@@ -264,7 +264,8 @@ anoModelo = 2011
 
 ### Consultar Veículo pelo Código FIPE
 
-Também pode ser consultado o veículo diretamente pelo código FIPE utilizando o `modeloCodigoExterno`, ano do modelo `anoModelo` e tabela de referência `codigoTabelaReferencia`. Observe que o `tipoConsulta` agora é `codigo` e o parâmetro `codigoTipoVeiculo` pode ser `1` (carros), `2` (motos), `3` (caminhões).
+Também pode ser consultado o veículo diretamente pelo código FIPE utilizando o `modeloCodigoExterno`, ano do modelo `anoModelo`, `codigoTipoCombustivel` (default: 1) e tabela de referência `codigoTabelaReferencia`. 
+Observe que o `tipoConsulta` agora é `codigo` e o parâmetro `codigoTipoVeiculo` pode ser `1` (carros), `2` (motos), `3` (caminhões).
 
 - Body
 
@@ -274,6 +275,7 @@ Também pode ser consultado o veículo diretamente pelo código FIPE utilizando 
     "codigoTipoVeiculo": 1,
     "anoModelo": 2011,
     "modeloCodigoExterno": "004357-5",
+    "codigoTipoCombustivel": 1,
     "tipoConsulta": "codigo"
   }
   ```
